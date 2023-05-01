@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.3rem;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+li.nav-item.position-relative.h3.text-bg-light {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+span.btn.btn-outline-primary {
+  border-radius: 0;
+}
+
+img.img-profile {
+  max-width: -webkit-fill-available;
+}
+
+div#message {
+  position: fixed;
+  left: 2rem;
+  bottom: 2rem;
+  z-index: 9;
+}
+
+h5.card-title a {
+  text-decoration: none;
+  color: var(--bs-dark);
+}
+
+li.nav-item.text-bg-dark {
+  list-style: none;
+  margin: 0.3rem 0;
+  padding: 0.1rem;
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+  form#form-created,
+  .profile.text-capitalize {
+    margin: 1rem 0;
+  }
+
+  div#message {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.alert.alert-warning.m-0.border-radius-0 {
+  border-radius: 0;
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
