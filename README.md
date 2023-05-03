@@ -33,7 +33,7 @@ To set up and run the JournoWeb demo project locally, follow these steps:
 1. Clone the repository to your local machine.
 
 ```
-git clone https://github.com/your-username/JournoWeb.git
+https://github.com/saidlagauit/JournoWeb.git
 ```
 
 2. Import the provided SQL database file into your MySQL database.
