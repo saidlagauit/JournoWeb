@@ -1,17 +1,8 @@
-<?php
-$stmt = $con->prepare("SELECT `id`, `username`, `fullname`, `email`, `password`, `avatar`, `city`, `phone`, `bio` FROM `users`");
-$stmt->execute();
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-if (isset($_SESSION['username'])) {
-  if (!empty($user['username']) && !empty($user['fullname']) && !empty($user['email']) && !empty($user['password']) && !empty($user['avatar']) && !empty($user['city']) && !empty($user['phone']) && !empty($user['bio'])) {
-  } else {
-    echo '<div class="alert alert-warning m-0 text-center">Please fill in the personal information</div>';
-  }
-}
-?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary text-capitalize">
   <div class="container">
-    <a class="navbar-brand" href="./">JournoWeb</a>
+    <a class="navbar-brand" href="./index.php">
+      <?php echo $lang['JournoWeb'] ?>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#my-navs"
       aria-controls="my-navs" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars"></i>
@@ -27,11 +18,24 @@ if (isset($_SESSION['username'])) {
             </a>
             <ul class="dropdown-menu  dropdown-menu-end">
               <li>
-                <a class="dropdown-item" href="profile.php"><i class="fa-solid fa-circle-user"></i>&nbsp;Profile</a>
+                <a class="dropdown-item" href="profile.php"><i class="fa-solid fa-circle-user"></i>&nbsp;
+                  <?php echo $lang['Profile'] ?>
+                </a>
               </li>
               <li>
+              <li>
                 <a class="dropdown-item" href="index.php?do=create-post">
-                  <i class="fa-solid fa-circle-plus"></i>&nbsp;Create
+                  <i class="fa-solid fa-circle-plus"></i>&nbsp;
+                  <?php echo $lang['Create'] ?>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a class="dropdown-item" href="profile.php?do=management-posts">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;
+                  <?php echo $lang['Articles'] ?>
                 </a>
               </li>
               <li>
@@ -39,7 +43,8 @@ if (isset($_SESSION['username'])) {
               </li>
               <li>
                 <a class="dropdown-item" href="logout.php">
-                  <i class="fa-solid fa-right-from-bracket"></i>&nbsp;Log Out
+                  <i class="fa-solid fa-right-from-bracket"></i>&nbsp;
+                  <?php echo $lang['Log Out'] ?>
                 </a>
               </li>
             </ul>
@@ -48,7 +53,9 @@ if (isset($_SESSION['username'])) {
         } else {
           ?>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a></a>
+            <a class="nav-link" href="about.php">
+              <?php echo $lang['About'] ?>
+            </a></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -58,12 +65,14 @@ if (isset($_SESSION['username'])) {
             <ul class="dropdown-menu  dropdown-menu-end">
               <li>
                 <a class="dropdown-item" href="index.php?do=enter">
-                  <i class="fa-solid fa-right-to-bracket"></i>&nbsp;Enter
+                  <i class="fa-solid fa-right-to-bracket"></i>&nbsp;
+                  <?php echo $lang['Enter'] ?>
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" href="index.php?do=new-registration">
-                  <i class="fa-solid fa-user-plus"></i>&nbsp;Registration
+                  <i class="fa-solid fa-user-plus"></i>&nbsp;
+                  <?php echo $lang['Registration'] ?>
                 </a>
               </li>
             </ul>
@@ -71,6 +80,20 @@ if (isset($_SESSION['username'])) {
           <?php
         }
         ?>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+          <div class="form-group">
+            <select name="language" class="form-control" onchange="this.form.submit()">
+              <option value="en" <?php if ($selectedLanguage === 'en')
+                echo 'selected'; ?>>
+                <?php echo $lang['English'] ?>
+              </option>
+              <option value="ar" <?php if ($selectedLanguage === 'ar')
+                echo 'selected'; ?>>
+                <?php echo $lang['Arabic'] ?>
+              </option>
+            </select>
+          </div>
+        </form>
       </ul>
     </div>
   </div>
