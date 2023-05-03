@@ -5,6 +5,7 @@ include 'connect.php';
 
 // Start directory includes
 $func = 'inc/functions/';
+$lang = 'inc/languages/';
 $tpl = 'templates/';
 $css = 'assets/css/';
 $js = 'assets/js/';
