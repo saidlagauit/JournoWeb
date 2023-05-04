@@ -47,11 +47,3 @@ https://github.com/saidlagauit/JournoWeb.git
 ## Contribution
 
 If you'd like to contribute to the development of JournoWeb, feel free to submit pull requests or open issues on the project repository. Your contributions are highly appreciated!
-
-## License
-
-JournoWeb is open-source software released under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Acknowledgements
-
-JournoWeb was inspired by the need for a user-friendly platform for journalists and article writers to publish their work effectively. It incorporates various technologies and libraries to deliver a seamless experience for users.
